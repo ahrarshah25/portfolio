@@ -1,0 +1,84 @@
+body {
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+h1 {
+  margin-bottom: 30px;
+}
+.slider {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+}
+/* Hide radio buttons */
+input[type="radio"] {
+  display: none;
+}
+.slides {
+  display: flex;
+  overflow: hidden;
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.slides img {
+  width: 180px;
+  height: 180px;
+  margin: 0 10px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+/* Navigation arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.3);
+  color: #000;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+}
+.nav-arrow:hover {
+  background: rgba(255,255,255,0.7);
+}
+.nav-prev {
+  left: -50px;
+}
+.nav-next {
+  right: -50px;
+}
+
+/* When first radio is checked, show logos */
+#slide1:checked ~ .slides .group1 {
+  display: flex;
+}
+#slide1:checked ~ .slides .group2 {
+  display: none;
+}
+/* When second radio is checked, show thumbnails */
+#slide2:checked ~ .slides .group1 {
+  display: none;
+}
+#slide2:checked ~ .slides .group2 {
+  display: flex;
+}
+
+.group1, .group2 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
